@@ -5,7 +5,7 @@ layers = int(input("Amount of layers: "))
 files = int(input("Amount of files per layer: "))
 try: buff = int(input("dd buffer size (default=10 gb): "))
 except ValueError: buff = 10
-print(f"total zip bomb size: {buff*(layers**(files))} gigabytes")
+print(f"total zip bomb size: {buff*(files**layers)} gigabytes")
 
 cwd = os.getcwd()
 try: os.mkdir("out")
