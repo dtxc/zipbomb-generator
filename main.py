@@ -26,3 +26,5 @@ for i in range(layers):
 os.system(f"cp zip0.zip {cwd}/zipbomb.zip")
 os.chdir(cwd)
 os.system("rm -rf out")
+
+pyautogui.alert('Process ended with status 0')
