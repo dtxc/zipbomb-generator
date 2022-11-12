@@ -1,4 +1,24 @@
 import os, subprocess
+from tkinter import *
+from tkinter import ttk
+
+win = Tk()
+win.geometry("750*250")
+
+def display_text():
+    global entry
+    string = entry.get()
+    label.configure(text=string)
+
+label = Label(win, text="", font=("Courier 22"))
+label.pack()
+
+entry = Entry(win, width= 40)
+entry.focus_set()
+entry.pack()
+
+ttk.Button(win, text= "Confirm",width= 20, command= display_text).pack(pady=20)
+win.mainloop()
 
 os.system('cls') if os.name == 'nt' else os.system('clear')
 
