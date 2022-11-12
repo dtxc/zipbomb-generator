@@ -1,5 +1,6 @@
-import os
-import subprocess
+import os, subprocess
+
+os.system('cls') if os.name == 'nt' else os.system('clear')
 
 layers = int(input("Amount of layers: "))
 files = int(input("Amount of files per layer: "))
